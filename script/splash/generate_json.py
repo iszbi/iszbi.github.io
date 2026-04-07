@@ -1,4 +1,5 @@
 # i dont know python so excuse the terrible humanslop ive presented in front of you today
+# using a long-forgotten method of cobbling together code from stack overflow
 
 import csv
 import json

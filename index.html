@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://unpkg.com/xp.css/dist/98.css">
         <link rel="stylesheet" href="style.css">
 
-        <div class="window active glass" style="width: 1000px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%)">
+        <div class="window active glass" style="margin-left: 10%; margin-right: 10%">
             <div class="title-bar">
                 <div class="title-bar-text"></div>
                 <div class="title-bar-controls">
@@ -19,7 +19,13 @@
 
             <div class="window-body">
                 <h2 style="text-align: center">iszbi's website</h2>
-                <p class="splash"><i>failed to load splash text (but fr, we actually couldn't load the splash text here) 3:</i></p>
+
+                <!--placeholder text-->
+                <pre id="splash" style="text-align: center; overflow: hidden; animation: scroller 10s linear infinite;">
+                    failed to load splash text (but fr, we actually couldn't load the splash text here) 3:
+                </pre>
+
+                <script src="script/splash/splash.js"></script>
             </div>
         </div>
     </body>

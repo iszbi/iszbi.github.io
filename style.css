@@ -1,7 +1,9 @@
-.splash {
-    font-family: 'Times New Roman';
-    text-align: center;
-    font-size: larger;
-    color: #666; /* hehe */
-}
+@keyframes scroller {
+    0% {
+        transform: translateX(-100%);
+    }
 
+    100% {
+        transform: translatex(100%);
+    }
+}
