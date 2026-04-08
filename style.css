@@ -4,6 +4,15 @@
     }
 
     100% {
-        transform: translatex(100%);
+        transform: translateX(100%);
     }
+}
+
+.splash {
+    backface-visibility: hidden;
+    text-align: center; 
+    /*animation: scroller 10s -5s linear;*/
+    background-color: black;
+    box-shadow: none;
+    scrollbar-width: none;
 }
