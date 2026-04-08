@@ -1,18 +1,21 @@
 @keyframes scroller {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(100%);
     }
 
     100% {
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
 }
 
 .splash {
     backface-visibility: hidden;
     text-align: center; 
-    /*animation: scroller 10s -5s linear;*/
     background-color: black;
     box-shadow: none;
-    scrollbar-width: none;
+    scrollbar-width: 0;
+}
+
+.horizontal-scrolling {
+    animation: scroller 20s -10s linear infinite;
 }
