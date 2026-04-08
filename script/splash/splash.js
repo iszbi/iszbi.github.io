@@ -33,23 +33,49 @@ async function initSplash() {
     console.log(`text font: ${splash.style.font}`);
 }
 
-initSplash().then(() => {
+// font must be loaded
+function measureSplash(text, font, size) {
     const ctx = document.createElement("canvas").getContext("2d");
-    
-    var dosfont = new FontFace("Perfect DOS VGA\ 437 Win", "url('https://unpkg.com/xp.css/dist/PerfectDOSVGA437Win.woff2') format('woff2')");
-    dosfont.weight = 400;
+    ctx.font = `${size}px ${dosfont.family}`;
+    var tm = ctx.measureText(text);
+    return tm.width;
+}
+
+const dosfont = new FontFace("Perfect DOS VGA\ 437 Win", "url('https://unpkg.com/xp.css/dist/PerfectDOSVGA437Win.woff2') format('woff2')");
+dosfont.weight = 400;
+
+initSplash().then(() => {    
     dosfont.load().then(
         () => {
             document.fonts.add(dosfont);
-            ctx.font = `16px ${dosfont.family}`;
-            var tm = ctx.measureText(current);
+            var splash_width = measureSplash(current, dosfont, 16);
+            var div_width = document.getElementById("splash-container").getBoundingClientRect().width;
             
-            console.log(`text width: ${tm.width}`);
-            console.log(`div width: ${document.getElementById("splash-container").getBoundingClientRect().width}`);
-            if(tm.width > document.getElementById("splash-container").getBoundingClientRect().width) {
+            console.log(`text width: ${splash_width}`);
+            console.log(`div width: ${div_width}`);
+            if(splash_width > div_width) {
                 setTimeout(() => splash.classList.add("horizontal-scrolling"), 2500);
             }
             
         }, (err) => alert(err));
 });
     
+document.defaultView.addEventListener("resize", (event) => {
+    var splash_width = measureSplash(current, dosfont, 16);
+    var div_width = document.getElementById("splash-container").getBoundingClientRect().width;
+
+    console.log(`text width: ${splash_width}`);
+    console.log(`div width: ${div_width}`);
+
+    if(splash_width > div_width) {
+        setTimeout(() => {
+            if(!splash.classList.contains("horizontal-scrolling"))
+                splash.classList.add("horizontal-scrolling");
+        }, 2500);
+    } else {
+        console.log("yay i'm here");
+        if(splash.classList.contains("horizontal-scrolling")) {
+            splash.classList.remove("horizontal-scrolling");
+        }
+    }
+});
