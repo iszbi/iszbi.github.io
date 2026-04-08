@@ -25,7 +25,6 @@ const url = "./script/splash/splashes.json";
 async function initSplash() {
     const text = await getData();
     index = Math.trunc(Math.random() * text.length);
-    index = 96;
     splash.textContent = text[index]["text"];
     current = text[index]["text"];
     //document.getElementById("splash").style = text[index]["css"];
