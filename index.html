@@ -4,13 +4,13 @@
         <title>iszbi's website</title>
     </head>
 
-    <body style="background-color: #008080">
+    <body style="background-color: #008080;">
         <link rel="stylesheet" href="https://unpkg.com/xp.css/dist/98.css">
         <link rel="stylesheet" href="style.css">
 
-        <div class="window active glass" style="margin-left: 10%; margin-right: 10%">
+        <div class="window active glass" style="margin-left: 10%; margin-right: 10%; margin-bottom: 10px">
             <div class="title-bar">
-                <div class="title-bar-text"></div>
+                <div class="title-bar-text">Title banner + splash</div>
                 <div class="title-bar-controls">
                     <button aria-label="Help"></button>
                     <button aria-label="Close"></button>
@@ -18,7 +18,7 @@
             </div>
 
             <div class="window-body">
-                <h2 style="text-align: center">iszbi's website</h2>
+                <h1 style="text-align: center">iszbi's website</h1>
 
                 <div id="splash-container" style="overflow-x: hidden; background-color: black; padding-left: 1%;">
                     <!--placeholder text-->
@@ -28,6 +28,49 @@
                 </div>
 
                 <script src="script/splash/splash.js"></script>
+            </div>
+        </div>
+
+        <div style="margin-left: 10%; margin-right: 10%; display: grid; grid-template-columns: 25% 50% 25%; gap: 10px">
+            <!--navigation, probably?-->
+            <div class="window active glass" style="width: auto">
+                <div class="title-bar">
+                    <div class="title-bar-text">Navigation</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+
+                <div class="window-body">
+                    
+                </div>
+            </div>
+
+            <!--introduction window-->
+            <div class="window active glass" style="width: auto">
+                <div class="title-bar">
+                    <div class="title-bar-text">Introduction</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close"></button>
+                    </div>
+                </div>
+
+                <div class="window-body" id="edit-window">
+                    <!--have to make a custom one unfortunately because it doesn't support rich text-->
+                    <div class="custom-text-box" contenteditable="true">
+                        <h2>haiii, i'm iszbi!</h2>
+                        <p><i>(the name comes from mashing up my name and its shorthand, btw)</i></p>
+                        i'm a hobbyist (currently) programmer in down under who codes for fun! <br>
+                        i play guitar and drums in my free time (not very well), i like heavy and aggressive music <br>
+                        also a transbian who's constantly yearning :3</p>
+                        <p>thanks for checking out my website!<br>in the meantime, you can check out my projects below, or check out my socials on the sidebar!</p>
+                        <p><i>by the way, if you want to restore the layout of the website and reset the text in this window, open the page settings!</i></p>
+                    </div>
+
+                    <div class="status-bar">
+                        <p class="status-bar-field">Click on the help button on the title banner for help</p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
