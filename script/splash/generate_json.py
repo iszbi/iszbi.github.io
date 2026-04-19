@@ -10,7 +10,7 @@ r = csv.DictReader(f)
 texts = []
 
 for row in r:
-    texts.append({ "text": row["text"], "css": row["css"], "isSleepDepr": row["text"] == "TRUE" })
+    texts.append({ "text": row["text"], "css": row["css"], "sensitive": row["sensitive"] == "TRUE" })
 
 f.close();
 
